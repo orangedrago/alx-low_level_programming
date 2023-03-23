@@ -6,11 +6,21 @@
  */
 void print_number(int n)
 {
-if (n < 0) {
+int num_digits = 1;
+int temp = n;
+if (n < 0) 
+{
 _putchar('-');
-n = -n;
+temp = -n;
 }
-if (n / 10)
-print_number(n / 10);
-_putchar(n % 10 + '0');
+while (temp >= 10)}
+{
+num_digits *= 10;
+temp /= 10;
+}
+while (num_digits >= 1) {
+_putchar((n / num_digits) + '0');
+n %= num_digits;
+num_digits /= 10;
+}
 }
